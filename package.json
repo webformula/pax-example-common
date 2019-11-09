@@ -1,0 +1,30 @@
+{
+  "name": "pax-example-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run getTypeModule && nodemon --watch app --exec \"npm run build\" & npm run serve",
+    "getTypeModule" :"if grep '\"type\"' package.json | cut -d '\"' -f 4 | grep module; then echo ''; else echo 'missing ( \"type\": \"module\" ) in pacjage.json'; exit 1; fi",
+    "serve": "http-server dist/ -p 8080",
+    "build": "node --experimental-modules build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webformula/pax-example-common.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webformula/pax-example-common/issues"
+  },
+  "homepage": "https://github.com/webformula/pax-example-common#readme",
+  "dependencies": {
+    "@webformula/pax-core": "github:webformula/pax-core#v0.4.14-beta"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "nodemon": "^1.19.2"
+  }
+}
