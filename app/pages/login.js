@@ -73,7 +73,7 @@ export default class Login extends Page {
               <input id="email" required>
 
               <mdw-textfield-helper>
-                <mdw-helper-text validation>Required</mdw-helper-text>
+                <mdw-helper-text validation>Required (enter anything)</mdw-helper-text>
               </mdw-textfield-helper>
             </mdw-textfield>
 
@@ -82,7 +82,7 @@ export default class Login extends Page {
               <input id="password" type="password" required>
 
               <mdw-textfield-helper>
-                <mdw-helper-text validation>Required</mdw-helper-text>
+                <mdw-helper-text validation>Required (enter anything)</mdw-helper-text>
               </mdw-textfield-helper>
             </mdw-textfield>
           </div>
