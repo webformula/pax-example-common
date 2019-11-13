@@ -88,8 +88,8 @@ export default class Login extends Page {
           </div>
 
           <div class="mdw-card__actions" style="justify-content: space-around;">
-            <mdw-button id="login" mdw-async class="mdw-raised mdw-primary" onclick="$Login.login()">Login</mdw-button>
-            <mdw-button onclick="$Login.register()">Register</mdw-button>
+            <mdw-button id="login" mdw-async class="mdw-raised mdw-primary" onclick="activePage.login()">Login</mdw-button>
+            <mdw-button onclick="activePage.register()">Register</mdw-button>
           </div>
         </mdw-card>
       </article>

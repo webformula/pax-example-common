@@ -2,7 +2,7 @@ import { html } from '@webformula/pax-core';
 
 export default function () {
   return html`
-    <mdw-drawer class="navigation mdw-locked-open">
+    <mdw-drawer class="navigation mdw-white mdw-locked-open">
       <mdw-drawer-fixed>
         <mdw-drawer-header>
           <div class="mdw-title">PAX</div>

@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npm run getTypeModule && nodemon --watch app --exec \"npm run build\" & npm run serve",
-    "getTypeModule" :"if grep '\"type\"' package.json | cut -d '\"' -f 4 | grep module; then echo ''; else echo 'missing ( \"type\": \"module\" ) in pacjage.json'; exit 1; fi",
+    "start": "npm run getTypeModule && nodemon --watch app --exec \"npm run build && npm run package\" & npm run serve",
+    "getTypeModule": "if grep '\"type\"' package.json | cut -d '\"' -f 4 | grep module; then echo ''; else echo 'missing ( \"type\": \"module\" ) in pacjage.json'; exit 1; fi",
     "serve": "http-server dist/ -p 8080",
-    "build": "node --experimental-modules build.js"
+    "build": "node --experimental-modules build.js",
+    "package": "webpack --config webpack.config.js && cp build/index.html dist/"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,12 @@
   },
   "homepage": "https://github.com/webformula/pax-example-common#readme",
   "dependencies": {
-    "@webformula/pax-core": "github:webformula/pax-core#v0.4.14-beta"
+    "@webformula/pax-core": "github:webformula/pax-core#v0.4.15-beta"
   },
   "devDependencies": {
     "http-server": "^0.11.1",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }

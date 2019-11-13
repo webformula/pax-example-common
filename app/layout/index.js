@@ -16,9 +16,9 @@ export default function ({ head, body, title }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 
         <!-- PAX components -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.12-beta/dist/pax-components.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.13-beta/dist/pax-components.css">
         <!-- NOTE type="module" -->
-        <script type="module" src="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.12-beta/dist/pax-components.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.13-beta/dist/pax-components.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 
