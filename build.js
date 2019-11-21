@@ -5,6 +5,10 @@ build({
   pagesFolder: 'pages',
   layoutFilePath: 'app/layout/index.js',
   distFolder: 'build',
+  // css: {
+  //   concat: false,
+  //   filename: 'main.css'
+  // },
   routerConfig: {
     root: 'home',
     fourOFour: 'fourOFour'

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const cwd = process.cwd();
 
@@ -20,5 +21,12 @@ module.exports = {
     alias: {
       '/@webformula/pax-core/index.js': path.resolve(cwd, `${distFolder}/@webformula/pax-core/index.js`)
     }
-  }
+  },
+
+  plugins: [
+    new CopyPlugin([
+      // copy css files into root of dist folder
+      { from: `./${buildFolder}/*.css`, flatten: true }
+    ]),
+  ]
 };

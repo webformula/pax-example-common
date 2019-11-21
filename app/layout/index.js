@@ -14,6 +14,7 @@ export default function ({ head, body, title }) {
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <link rel="stylesheet" href="main.css">
 
         <!-- PAX components -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.13-beta/dist/pax-components.css">

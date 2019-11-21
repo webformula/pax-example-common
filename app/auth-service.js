@@ -103,7 +103,8 @@ const authService = new class {
   }
 
   generateToken(email) {
-    return `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.${btoa(JSON.stringify({ email: email, iat: Date.now(), exp: (new Date(Date.now() + 1 * 60000)).getTime() }))}.NLvx-kWU2JE3VfMB6rMUS1cQq3e7N8FFKtRMEmsXU1g`;
+    const minutes = 10;
+    return `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.${btoa(JSON.stringify({ email: email, iat: Date.now(), exp: (new Date(Date.now() + 1 * 60000 * minutes)).getTime() }))}.NLvx-kWU2JE3VfMB6rMUS1cQq3e7N8FFKtRMEmsXU1g`;
   }
 
   decodeToken(token) {

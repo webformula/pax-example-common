@@ -12,8 +12,13 @@ export default function () {
         <mdw-drawer-content>
           <mdw-list>
             <mdw-list-item href="#/home" href-alt="#/">
-              <span class="mdw-list-item__graphic material-icons">inbox</span>
+              <span class="mdw-list-item__graphic material-icons">home</span>
               Home
+            </mdw-list-item>
+
+            <mdw-list-item href="#/auth">
+              <mdw-icon>security</mdw-icon>
+              Auth playground
             </mdw-list-item>
 
             <mdw-list-item href="#/ddd">
