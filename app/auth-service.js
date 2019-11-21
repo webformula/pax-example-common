@@ -1,10 +1,23 @@
 const authService = new class {
   constructor() {
+    this.experationMinutes_ = 3;
     this.onErrorCallbacks = new Set();
     this.bound_validateAuth = this.validateAuth.bind(this);
     window.addEventListener('hashchange', this.bound_validateAuth);
     this.setupAxiosInterceptor();
     this.validateAuth();
+  }
+
+  get experationSeconds() {
+    return this.experationMinutes * 60;
+  }
+
+  get experationMinutes() {
+    return this.experationMinutes_;
+  }
+
+  set experationMinutes(value = 10) {
+    this.experationMinutes_ = parseInt(value);
   }
 
   setupAxiosInterceptor() {
@@ -103,8 +116,7 @@ const authService = new class {
   }
 
   generateToken(email) {
-    const minutes = 10;
-    return `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.${btoa(JSON.stringify({ email: email, iat: Date.now(), exp: (new Date(Date.now() + 1 * 60000 * minutes)).getTime() }))}.NLvx-kWU2JE3VfMB6rMUS1cQq3e7N8FFKtRMEmsXU1g`;
+    return `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.${btoa(JSON.stringify({ email: email, iat: Date.now(), exp: (new Date(Date.now() + 1 * 60000 * this.experationMinutes)).getTime() }))}.NLvx-kWU2JE3VfMB6rMUS1cQq3e7N8FFKtRMEmsXU1g`;
   }
 
   decodeToken(token) {
