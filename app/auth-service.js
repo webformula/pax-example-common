@@ -2,8 +2,8 @@ const authService = new class {
   constructor() {
     this.experationMinutes_ = 3;
     this.onErrorCallbacks = new Set();
-    this.bound_validateAuth = this.validateAuth.bind(this);
-    window.addEventListener('hashchange', this.bound_validateAuth);
+    this.bound_routeChange = this.routeChange.bind(this);
+    window.addEventListener('hashchange', this.bound_routeChange);
     this.setupAxiosInterceptor();
     this.validateAuth();
   }
@@ -18,6 +18,10 @@ const authService = new class {
 
   set experationMinutes(value = 10) {
     this.experationMinutes_ = parseInt(value);
+  }
+
+  get redirectTo() {
+    return this.redirectTo_;
   }
 
   setupAxiosInterceptor() {
@@ -65,6 +69,12 @@ const authService = new class {
     });
   }
 
+  routeChange(event) {
+    // routre may not reach destination due to auth, lets keep track if it does not.
+    if (!this.redirectTo_) this.redirectTo_ = (event.newURL || '').split('#')[1];
+    this.validateAuth();
+  }
+
   validateAuth() {
     const parsed = this.decodeToken(this.token);
 
@@ -75,6 +85,8 @@ const authService = new class {
 
     // redirect to login
     if (!this.token) location.href = '/#/login';
+    // reached destination, clear var
+    else this.redirectTo_ = undefined;
   }
 
   isTokenExpired() {

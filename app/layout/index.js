@@ -17,9 +17,9 @@ export default function ({ head, body, title }) {
         <link rel="stylesheet" href="main.css">
 
         <!-- PAX components -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.13-beta/dist/pax-components.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.18-beta/dist/pax-components.css">
         <!-- NOTE type="module" -->
-        <script type="module" src="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.13-beta/dist/pax-components.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/webformula/pax-components@0.5.18-beta/dist/pax-components.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 
@@ -35,18 +35,18 @@ export default function ({ head, body, title }) {
             <mdw-top-app-bar class="mdw-fixed mdw-white">
               <section>
                 <mdw-icon onclick="document.querySelector('mdw-drawer.navigation').toggle()">menu</mdw-icon>
-                <span class="mdw-title">PAX example with auth</span>
+                <span class="mdw-title">PAX common example with JWT auth</span>
               </section>
 
               <section>
-                <mdw-button onclick="authService.logout()">Logout</mdw-button>
+                <mdw-button href="https://github.com/webformula/pax-example-common" target="_blank" class="mdw-secondary">GitHub</mdw-button>
+                <mdw-button onclick="authService.logout()" class="mdw-error">Logout</mdw-button>
               </section>
 
               <section></section>
             </mdw-top-app-bar>
           </header>
 
-          <!-- constrain-width sets the pages max width to 840px -->
           <mdw-content>
             ${body}
           </mdw-content>

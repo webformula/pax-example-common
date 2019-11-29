@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/webformula/pax-example-common#readme",
   "dependencies": {
-    "@webformula/pax-core": "github:webformula/pax-core#v0.5.0-beta"
+    "@webformula/pax-core": "github:webformula/pax-core#v0.6.0-beta"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.5",

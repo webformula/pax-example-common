@@ -38,7 +38,11 @@ export default class Login extends Page {
 
     try {
       await authService.login(this.emailInput.value, this.passwordInput.value);
-      location.hash = '/'; // navigate home;
+      // check if we have a route that was interupted by auth and redirect to it
+      // else redirect to home
+      console.log(authService.redirectTo);
+      if (authService.redirectTo && authService.redirectTo !== '/login') location.hash = authService.redirectTo;
+      else location.hash = '/';
     } catch (e) {
       setTimeout(() => {
         this.loginButton.resolve();

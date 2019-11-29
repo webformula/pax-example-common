@@ -6,7 +6,7 @@ export default function () {
       <mdw-drawer-fixed>
         <mdw-drawer-header>
           <div class="mdw-title">PAX</div>
-          <div class="mdw-subtitle">Example with auth</div>
+          <div class="mdw-subtitle">Common example with JWT auth</div>
         </mdw-drawer-header>
 
         <mdw-drawer-content>
@@ -21,9 +21,9 @@ export default function () {
               Auth playground
             </mdw-list-item>
 
-            <mdw-list-item href="#/ddd">
-              <span class="mdw-list-item__graphic material-icons">star</span>
-              Non existing
+            <mdw-list-item href="#/building">
+              <mdw-icon>build</mdw-icon>
+              App build
             </mdw-list-item>
           </mdw-list>
         </mdw-drawer-content>

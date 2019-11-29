@@ -107,11 +107,6 @@ export default class Auth extends Page {
             <mdw-button mdw-async onclick="activePage.makeRequest(this)" class="mdw-primary">Simulate http call (this will refresh expired token)</mdw-button>
          </div>
         </mdw-card>
-
-        <div style="height: 64px;"></div>
-
-        <a href="https://material.io/design/components/buttons.html" target="_new">Material Design Guidlines: Buttons</a>
-        <p>Buttons allow users to take actions, and make choices, with a single tap</p>
       </article>
     `;
   }
